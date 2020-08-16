@@ -14,6 +14,7 @@ app.use(session({
     secret:'secret-key',
     resave:false,
     saveUninitialized:false,
+     maxAge: 30*10000,
 }));
 
 app.all('/*', function(req, res, next) {
