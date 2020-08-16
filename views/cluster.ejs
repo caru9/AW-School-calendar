@@ -34,7 +34,7 @@
                                         <tr>
                                                 <td> <%= grouplist[i].idclass %> </td>
                                                 <td> <%= grouplist[i].number_of_student %>    </td>
-                                                <td> <form action="/home/cluster/deletegroup/<%=grouplist[i].idclass %>" method="POST">
+                                                <td> <form action="/home/cluster/deletegroup/<%=grouplist[i].idclass %>" method="DELETE">
                                                         <button name="groupdelete"> <i class="fa fa-trash"></i> </button>
                                                 </form></td>
                                         </tr>
@@ -77,7 +77,7 @@
                                                 <td> <%= studentlist[i].firstname %> </td>
                                                 <td> <%= studentlist[i].lastname %>    </td>
                                                 <td> <%= studentlist[i].class_name %>    </td>
-                                                <td> <form action="/home/cluster/deletestudent/<%=studentlist[i].idstudent %>" method="POST">
+                                                <td> <form action="/home/cluster/deletestudent/<%=studentlist[i].idstudent %>" method="DELETE">
                                                         <button name="studentdelete"> <i class="fa fa-trash"></i> </button>
                                                 </form></td>
                                         </tr>
