@@ -11,6 +11,16 @@ exports.check_loggedin = function(req,res,next){
     }; 
 };  
 
+//API 
+exports.apicheck_loggedin = function(req,res,err){
+    idteacher = req.session.userid; 
+    if (idteacher) {
+        res.json({"idteacher":idteacher}); 
+    } else {
+        res.status(404).json({message: err})
+    }; 
+}; 
+
 
 
 
