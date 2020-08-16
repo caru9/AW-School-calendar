@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	      <%- include ('./partials/head') %>
+	</head>
+	<body>
+    <header> 
+          <%- include ('./partials/header') %>
+    </header>  
+        <main>
+            <h1> Gestion des leçons</h1>
+				<div class="form" id="alterlesson-form">
+					<h2> Modifier la leçon </h2>
+					<div class="bigform">
+						<form class="big" action="/home/lesson/updatelesson/<%=funlesson[0].idlesson%>" method="POST">
+							<input type="text" value="<%=funlesson[0].weekday%>" name="weekday" placeholder="Jour de la semaine" required> 
+							<input type="text" value="<%=funlesson[0].hour%>" name="hour" placeholder="Heure de la journée" required> 
+							<select class="class_name" name="class_name">
+                                <option value="selectionner la classe" disabled selected hidden></option>
+								<% for(var i=0; i <uniquegroup.length; i++) { %> 
+									<option> <%=uniquegroup[i].idclass %> </option>
+									<% } %>	
+							</select>
+							<input type="submit">
+						</form> 
+					</div>
+				</div>
+        </main>
+        <footer>
+                <%- include ('./partials/footer') %>
+        </footer>              
+	</body>
+</html>

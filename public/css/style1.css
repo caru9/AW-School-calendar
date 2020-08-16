@@ -1,0 +1,237 @@
+:root {
+    --dark-green :#188A86; 
+    --yellow : #FFBC00; 
+    --ocean:#57C8B6; 
+    --dark-grey:#898F96; 
+    --light-grey: #E7E9EC; 
+    --white-smoke:rgb(244,245,251);  
+}
+
+body{ 
+    margin:0px; 
+    padding:15px; 
+    font-size:100%; 
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    background-color: var(--light-grey);  
+    }
+
+main {
+    padding: 20px 4%
+} 
+
+h1 {
+    font:bold; 
+    color:var(--dark-grey);
+    font-size:35px;; 
+    text-align:center; 
+    padding-bottom: 25px; 
+}
+
+h2 {
+    font:bold; 
+    color:var(--ocean); 
+    font-size:1.5em; 
+    text-align:center; 
+}
+
+h3 {
+    color:var(--yellow); 
+    font-size:1.1em; 
+}
+
+
+/*------------------- Header------------------ */     
+.grid-header{
+    display:grid; 
+    grid-template-columns:8fr 2fr 1fr;
+    grid-column-gap:5%; 
+}
+
+.header-img >img {
+    width: 400px; 
+    padding: 20px 20px ; 
+}
+
+.deconnect > a {
+    text-align:center; 
+    margin-top:40px; 
+}
+.deconnect > a:link {
+    color: var(--dark-grey); 
+    font-size: 1.1em; 
+    font-style: bold; 
+    display:block; 
+    text-decoration:none;
+}
+.deconnect > a:visited {
+    color: var(--ocean); 
+    font-size: 1.1em; 
+    font-style: bold; 
+    display:block; 
+    text-decoration:none;
+}
+
+.homeicon > a > i {
+    font-size:40px;
+    color: var(--dark-grey); 
+    margin-top: 30px;  
+    margin-right:30px; 
+}
+
+
+/*  Design des formulaires 
+grand formulaire class= bigform
+petit formulaire class=smallform */ 
+
+
+.bigform > form {
+    width: 300px; 
+    margin: 0 auto;
+}
+
+form > input[type="text"], input[type="email"],
+input[type="password"], select {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+}
+
+form > input[type="submit"] {
+    padding: 10px;
+    background-color: var(--dark-green);
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.smallform {
+    margin: 0 auto;
+}
+
+.big > input[type="text"]{ width:100%; }
+.big > input[type="email"]{ width:100%; }
+.big > input[type="password"]{ width:100%; }
+.big > input[type="submit"] { width:100%; } 
+.big > select {width:100%;}
+
+
+
+
+
+
+/* ---------------HOMEPAGE --------------*/ 
+.grid-menu {
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-column-gap:10%; 
+}
+
+.box1 {
+    background-color: var(--dark-green);
+}
+.box2 {
+    background-color: var(--ocean); 
+}
+.box3 {
+    background-color:var(--yellow); 
+}
+.box-menu > i {
+  font-size:50px;
+  color: white; 
+  display: block; 
+  text-align: center;
+  padding-bottom:10%; 
+}
+
+.box-menu > a:link {
+    color:white; 
+    font-size: 1.2em; 
+    font-style:bold; 
+    display:block; 
+    text-align: center;
+    text-decoration:none;
+    padding:10% 0%;  
+}
+
+.box-menu > a:visited {
+    color:white; 
+    font-size: 1.2em; 
+    font-style:bold; 
+    display:block; 
+    text-align: center;
+    text-decoration:none;
+    padding:10% 0%;  
+}
+.box-menu >  a:hover {
+        text-decoration: underline;
+      }
+
+/* CSS for cluster grid */ 
+
+.cluster-grid, .lesson-grid, .grid-abs {
+    display:grid; 
+    grid-template-columns: 50% 50% ;
+    grid-column-gap:30px; 
+}
+
+/* CSS for table */ 
+.wowtable {
+    width: 80%; 
+    border-collapse: collapse; 
+    margin: 0 auto; 
+}
+
+.wowtable td, .wowtable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.wowtable tr:nth-child(odd){background-color: #f2f2f2;}
+
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:var(--dark-grey);
+  color: white;
+}
+
+
+
+
+/* common for info */ 
+.infos{ 
+    text-align:center; 
+    font-style:italic, bold; 
+    font-size: 15px; 
+    color: var(--yellow); 
+    padding-top: 20px; 
+}
+.infos > a {
+    text-align:center; 
+    font-style:italic, bold; 
+    font-size: 15px; 
+    color: var(--yellow); 
+    padding-top: 20px; 
+
+}
+
+/* footer */ 
+.center-footer{
+    padding-top:50px; 
+    text-align:center;
+}
+
+
+/* REsponsive css */ 
+@media(max-width:992px){
+    img {display:none};
+    .grid-header {grid-template-columns:1fr 1fr;} 
+    .cluster-grid {grid-template-columns:1fr; }
+    .lesson-grid {grid-template-columns:1fr; }
+    .grid-abs{grid-template-columns:1fr;}
+}

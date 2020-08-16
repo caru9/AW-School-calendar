@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+                <%- include ('./partials/head') %>
+	</head>
+	<body>
+        <header>      
+                <%- include ('./partials/header') %>
+        </header>  
+        <main>
+                <h1> Gestion des classes et des absences </h1>
+                <div class="cluster-grid">        
+                <div class="group"> 
+                        <h2>Les classes </h2>
+                        <h3> Ajouter une classe </h3>
+                        <div class="smallform">
+                        <form action="/home/cluster/addgroup" method="POST">
+                                        <input type="text" name="idclass" placeholder="Nom de la classe" required> 
+                                        <input type="submit">
+                        </form>
+                        </div>
+                        <h3> Liste des classes</h3>
+                        <!-- screen des classes -->
+                        <table class="wowtable">
+                                <thead>
+                                      <tr> 
+                                        <th> Nom de la classe </th>
+                                        <th> Nombre d'élèves</th>
+                                        <th> Supprimer </th>
+                                      </tr>  
+                                </thead>
+                                <tbody>
+                                        <% for(var i=0; i <grouplist.length; i++) { %> 
+                                        <tr>
+                                                <td> <%= grouplist[i].idclass %> </td>
+                                                <td> <%= grouplist[i].number_of_student %>    </td>
+                                                <td> <form action="/home/cluster/deletegroup/<%=grouplist[i].idclass %>" method="POST">
+                                                        <button name="groupdelete"> <i class="fa fa-trash"></i> </button>
+                                                </form></td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                        </table>
+               <!-- ajout d'une class-->
+             
+                <!-- screen des classes-->
+                </div>  
+                <div class="student">
+                        <h2>Les étudiants </h2>
+                        <h3> Ajouter un étudiant </h3>
+                        <div class="smallform">
+                        <form action="/home/cluster/addstudent" method="POST">
+                                <input type="text" name="firstname" placeholder="Prénom" required> 
+                                <input type="text" name="lastname" placeholder="Nom" required> 
+                                <select class="smallform" name="class_name">
+                                        <option value="" disabled selected hidden>Sélectionner une classe</option>
+                                        <% for(var i=0; i <uniquegroup.length; i++) { %> 
+                                                <option> <%=uniquegroup[i].idclass %> </option>
+                                                <% } %>	
+                                </select>
+                                <input type="submit">
+                        </form>
+                        </div>
+                        <h3> Liste des étudiants</h3>
+                        <table class="wowtable">
+                                <thead>
+                                <tr>
+                                        <th> Prénom </th>
+                                        <th> Nom de famille </th>
+                                        <th> Classe </th>
+                                        <th> Supprimer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <% for(var i=0; i <studentlist.length; i++) { %> 
+                                        <tr>
+                                                <td> <%= studentlist[i].firstname %> </td>
+                                                <td> <%= studentlist[i].lastname %>    </td>
+                                                <td> <%= studentlist[i].class_name %>    </td>
+                                                <td> <form action="/home/cluster/deletestudent/<%=studentlist[i].idstudent %>" method="POST">
+                                                        <button name="studentdelete"> <i class="fa fa-trash"></i> </button>
+                                                </form></td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                        </table>
+               <!-- ajout d'une étudiant-->
+                </div>
+        </div>
+                
+
+
+
+
+        </main>
+        <footer>
+                <%- include ('./partials/footer') %>
+        </footer>              
+	</body>
+</html>

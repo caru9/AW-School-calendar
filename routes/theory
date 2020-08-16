@@ -1,0 +1,32 @@
+function test(varA){
+  function notify(){
+    console.log(varA);
+  }
+  notify();
+}
+
+test(10) 
+
+-> work because same scope 
+
+function test(varA, callback){
+  callback();
+}
+
+test(10, function(){
+  
+  // This will throw error, because there is no variable called varA
+  console.log(varA);
+})
+
+// throw an error 
+
+
+// pass argument to callback !!! 
+function test(varA, callback){
+  callback(varA);
+}
+
+test(10, function(varA){
+  console.log(varA);
+})

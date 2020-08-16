@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <%- include ('./partials/head') %>
+	</head>
+	<body>
+	<header> 
+		<%- include ('./partials/header') %>
+	</header>
+	<main>
+		<h1>HOME PAGE </h1>
+		<!-- le menu-->
+		<div class="grid-menu">
+			<div class="box-menu box1"> 
+				<a href="/home/abs"> Gestion des absences </a>
+				<i class="fa fa-check-square-o" aria-hidden="true"></i>
+			</div>
+			<div class="box-menu box2"> 
+				 <a href="/home/lesson"> Gestion de mes leçcons </a>
+				 <i class="fa fa-book" aria-hidden="true"></i>
+			</div>
+			<div class="box-menu box3">
+				<a href="/home/cluster"> Gestion des classes et des élèves </a>
+				<i class="fa fa-users" aria-hidden="true"></i>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<%- include ('./partials/footer') %>
+	</footer>    
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+                <%- include ('./partials/head') %>
+	</head>
+	<body>
+        <header>      
+                <%- include ('./partials/headerall') %>
+        </header>  
+        <main>
+                <h1> Se connecter </h1>
+                <div class="bigform">
+                
+                                <form class="big" action="/auth" method="POST">
+                                        <input type="email" name="email" placeholder="Adresse e-mail" required>
+                                        <input type="password" name="password" placeholder="Mot de passe" required>
+                                        <input type="submit">
+                                </form>
+                        </div>
+                <p class="infos"> Pas encore de compte ? <a href="/register"> Inscrivez-vous! </a> </p>
+                
+        </main>
+        <footer>
+                <%- include ('./partials/footer') %>
+        </footer>              
+	</body>
+</html>

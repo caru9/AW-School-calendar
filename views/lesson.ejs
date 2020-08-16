@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	      <%- include ('./partials/head') %>
+	</head>
+	<body>
+    <header> 
+          <%- include ('./partials/header') %>
+    </header>  
+        <main>
+			<h1> Gestion des leçons</h1>
+			<div class="lesson-grid">
+			<div>
+				<h2> Liste de mes leçons </h2>
+				<table class="wowtable">
+					<thead>
+					<tr>
+						<th> ID de la leçon </th>
+						<th> Jour de la semaine</th>
+						<th> Heure </th>
+						<th> Classe </th>
+						<th> Modifier </th>
+						<th> Supprimer </th>
+					</tr>
+					</thead>
+					<tbody>
+						<% for(var i=0; i <lessonlist.length; i++) { %> 
+						<tr>
+							<td> <%= lessonlist[i].idlesson %> </td>
+							<td> <%= lessonlist[i].weekday %> </td>
+							<td> <%= lessonlist[i].hour %> </td>
+							<td> <%= lessonlist[i].class_name %> </td>
+							<td> <form action="/home/lesson/alterlesson/<%=lessonlist[i].idlesson %>" method="POST">
+								<button name="lessonmodify"> <i class="fa fa-pencil"></i> </button>
+							</form></td>
+							<td> <form action="/home/lesson/deletelesson/<%=lessonlist[i].idlesson %>" method="POST">
+								<button name="lessondelete"> <i class="fa fa-trash"></i> </button>
+							</form></td> 
+						</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<div class="bigform" id="addlesson-form">
+					<h2> Créer une nouvelle leçon </h2>
+						<form class="big" action="/home/lesson/addlesson" method="POST">
+							<input type="text" name="weekday" placeholder="Jour de la semaine" required> 
+							<input type="text" name="hour" placeholder="Heure de la journée" required> 
+							<select class="class_name" name="class_name">
+								<option value="" disabled selected hidden>Sélectionner une classe</option>
+								<% for(var i=0; i <uniquegroup.length; i++) { %> 
+									<option> <%=uniquegroup[i].idclass %> </option>
+									<% } %>	
+							</select>
+							<input type="submit">
+						</form>
+					</div>
+			</div>
+		</div>
+        </main>
+        <footer>
+                <%- include ('./partials/footer') %>
+        </footer>              
+	</body>
+</html>

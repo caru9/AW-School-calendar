@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	      <%- include ('./partials/head') %>
+	</head>
+	<body>
+    <header> 
+          <%- include ('./partials/header') %>
+    </header>  
+        <main>
+            <h1> Gestion des absences</h1>
+            <div class="grid-abs">
+            <div>
+            <h2> Enregistrer des absences </h2>
+            <form action="/home/abs/logabs" method="POST">
+             <h3> Sélectionner la date </h3>   
+             <input type="date" name="date" placeholder="Sélectionner une date" required>
+               
+            <h3> 2. Sélectionner la leçon </h3>
+                <% for(var i=0; i <lessonlist.length; i++) { %> 
+                  
+                <input type="radio" name="selectedlesson" value="<%= lessonlist[i].idlesson %>">
+                <label for="<%= lessonlist[i].idlesson %>"> 
+                        Le <%=lessonlist[i].weekday%> à la <%=lessonlist[i].hour%> avec la classe <%=lessonlist[i].class_name%></label> 
+                    <br>
+                <% } %>   
+
+            <h3> 3. Sélectionner les élèves absents </h3>
+            <% for(var i=0; i <studentlist.length; i++) { %> 
+                <input type="checkbox" name="brosseur[i]" value="<%= studentlist[i].idstudent %>">
+                <label for="brosseur[i]"> <%=studentlist[i].firstname %>  <%=studentlist[i].lastname %></label>
+                <br>
+            <% } %>   
+				<input type="submit">
+        </form> 
+        </div>
+        <div>
+            <div class="bigform">
+                <h2> Rechercher les absences d'un élèves </h2>
+                    <form class="big" action="/home/abs/displayabs" method="POST">
+                        <input type="text" name="firstname" placeholder="Prénom de l'élève" required> 
+                        <input type="text" name="lastname" placeholder="Nom de famille de l'élève" required> 
+                        <input type="submit">
+                    </form>
+                </div>
+        </main>
+        <footer>
+                <%- include ('./partials/footer') %>
+        </footer>              
+	</body>
+</html>
