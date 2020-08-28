@@ -97,7 +97,6 @@ router.post('/api/lesson/updatelesson/:lessonid',apilessoncontroller.updatelesso
 
 //---------------------- CLUSTER (GROUP & STUDENT) ROUTES ------------// 
 router.get('/api/cluster',apiclustercontroller.viewcluster); 
-router.get('/api/test',apiclustercontroller.test); 
 router.post('/api/cluster/addgroup',apiclustercontroller.creategroup); 
 router.post('/api/cluster/addstudent',apiclustercontroller.createstudent); 
 router.delete('/api/cluster/deletegroup/:idclass',apiclustercontroller.deletegroup); 
