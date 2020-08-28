@@ -88,29 +88,26 @@ router.get('/api/logout',apiusercontroller.userlogout);
 router.get('/api/home',session.apicheck_loggedin);
 
 //------------------------- LESSON ROUTE -----------------------//
-router.get('/api/home/lesson',apilessoncontroller.viewlesson);
-router.post('/api/home/lesson/addlesson',apilessoncontroller.createlesson); 
-router.delete('/api/home/lesson/deletelesson/:lessonid',apilessoncontroller.deletelesson); 
-router.post('/api/home/lesson/alterlesson/:lessonid',apilessoncontroller.alterlesson); 
-router.post('/api/home/lesson/updatelesson/:lessonid',apilessoncontroller.updatelesson) 
+router.get('/api/lesson',apilessoncontroller.viewlesson);
+router.post('/api/lesson/addlesson',apilessoncontroller.createlesson); 
+router.delete('/api/lesson/deletelesson/:lessonid',apilessoncontroller.deletelesson); 
+router.post('/api/lesson/alterlesson/:lessonid',apilessoncontroller.alterlesson); 
+router.post('/api/lesson/updatelesson/:lessonid',apilessoncontroller.updatelesson) 
 
 
 //---------------------- CLUSTER (GROUP & STUDENT) ROUTES ------------// 
-router.get('/api/home/cluster',apiclustercontroller.viewcluster); 
-router.post('/api/home/cluster/addgroup',apiclustercontroller.creategroup); 
-router.post('/api/home/cluster/addstudent',apiclustercontroller.createstudent); 
-router.delete('/api/home/cluster/deletegroup/:idclass',apiclustercontroller.deletegroup); 
-router.delete('/api/home/cluster/deletestudent/:idstudent',apiclustercontroller.deletestudent); 
-
+router.get('/api/cluster',apiclustercontroller.viewcluster); 
+router.get('/api/test',apiclustercontroller.test); 
+router.post('/api/cluster/addgroup',apiclustercontroller.creategroup); 
+router.post('/api/cluster/addstudent',apiclustercontroller.createstudent); 
+router.delete('/api/cluster/deletegroup/:idclass',apiclustercontroller.deletegroup); 
+router.delete('/api/cluster/deletestudent/:idstudent',apiclustercontroller.deletestudent); 
 
 // --------------------- ABS routes ---------------// 
 //NOT DONE 
 //router.get('/home/abs',[session.check_loggedin, abscontroller.viewabs]); 
 //router.post('/home/abs/logabs',[session.check_loggedin,abscontroller.createabs]);
 //router.post('/home/abs/displayabs',[session.check_loggedin,abscontroller.retrieveabs,abscontroller.display]); 
-
-
-
 
 
 
