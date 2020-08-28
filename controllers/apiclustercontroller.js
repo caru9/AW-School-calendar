@@ -9,17 +9,13 @@ exports.viewcluster = function(req,res){
             let studentlist=data2; 
              Group.display_form(function(data3){
                  let uniquegroup=data3; 
-                    if(err) {
-                        res.status(404).json({'message':err}); 
-                    } else { 
-                        res.json({grouplist:grouplist,
-                            studentlist:studentlist,
-                            uniquegroup:uniquegroup});
-                    }  
+                res.json({"grouplist":grouplist,"studentlist":studentlist,"uniquegroup":uniquegroup}); 
              })
         }); 
     }); 
 }; 
+
+
 // group create 
 exports.creategroup = function(req,res) {
     var idclass = req.body.idclass; 
